@@ -1,2 +1,20 @@
-.gradle/
+# Bnd
+generated/
+cnf/cache/
+
+# Eclipse
+.project
+.classpath
+.settings/
 .metadata
+bin/
+bin_test/
+
+# Gradle
+build/
+.gradle/
+.gradletasknamecache
+
+# Maven
+target/
+
