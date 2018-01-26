@@ -1,13 +1,9 @@
 # Configure Repositories
 -plugin.1.Central: \
-	aQute.bnd.deployer.repository.wrapper.Plugin; \
-		location = "${build}/cache/wrapper"; \
-		reindex = true, \
-	aQute.bnd.jpm.Repository; \
-		includeStaged = true; \
-		name = Central; \
-		location = ~/.bnd/shacache; \
-		index = ${build}/central.json
+	aQute.bnd.repository.maven.provider.MavenBndRepository; \
+		releaseUrl=https://repo.maven.apache.org/maven2/; \
+		index=${.}/central.maven; \
+		name="Central"
 
 -plugin.2.Local: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
