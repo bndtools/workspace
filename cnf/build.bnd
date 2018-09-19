@@ -2,37 +2,43 @@
 -plugin.1.R7.API: \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
 		snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
-		releaseUrls=https://repo1.maven.org/maven2/; \
+		releaseUrls=https://repo.maven.apache.org/maven2/; \
 		revision=org.osgi.enroute:osgi-api:7.0.0-SNAPSHOT; \
+		readOnly=true; \
 		name="OSGi R7 API"
 -plugin.2.Enterprise.API: \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
 		snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
-		releaseUrls=https://repo1.maven.org/maven2/; \
+		releaseUrls=https://repo.maven.apache.org/maven2/; \
 		revision=org.osgi.enroute:enterprise-api:7.0.0-SNAPSHOT; \
+		readOnly=true; \
 		name="Enterprise Java APIs"
 -plugin.3.R7.Impl: \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
 		snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
-		releaseUrls=https://repo1.maven.org/maven2/; \
+		releaseUrls=https://repo.maven.apache.org/maven2/; \
 		revision=org.osgi.enroute:impl-index:7.0.0-SNAPSHOT; \
+		readOnly=true; \
 		name="OSGi R7 Reference Implementations"
 -plugin.4.Test: \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
 		snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
-		releaseUrls=https://repo1.maven.org/maven2/; \
+		releaseUrls=https://repo.maven.apache.org/maven2/; \
 		revision=org.osgi.enroute:test-bundles:7.0.0-SNAPSHOT; \
+		readOnly=true; \
 		name="Testing Bundles"
 -plugin.5.Debug: \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
 		snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
-		releaseUrls=https://repo1.maven.org/maven2/; \
+		releaseUrls=https://repo.maven.apache.org/maven2/; \
 		revision=org.osgi.enroute:debug-bundles:7.0.0-SNAPSHOT; \
+		readOnly=true; \
 		name="Debug Bundles"
 -plugin.6.Central: \
 	aQute.bnd.repository.maven.provider.MavenBndRepository; \
 		releaseUrl=https://repo.maven.apache.org/maven2/; \
 		index=${.}/central.maven; \
+		readOnly=true; \
 		name="Maven Central"
 -plugin.7.Local: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
