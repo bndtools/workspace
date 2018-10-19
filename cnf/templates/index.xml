@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Templates" increment="1534954203800">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Templates" increment="1539947831157">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="org.bndtools.templates.osgi"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="7.0.0.201808221606" type="Version"/>
+      <attribute name="version" value="7.0.0.201810191116" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="7.0.0.201808221606" type="Version"/>
+      <attribute name="bundle-version" value="7.0.0.201810191116" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="org.bndtools.templates.osgi"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="7.0.0.201808221606" type="Version"/>
+      <attribute name="bundle-version" value="7.0.0.201810191116" type="Version"/>
       <attribute name="osgi.wiring.host" value="org.bndtools.templates.osgi"/>
     </capability>
     <capability namespace="org.bndtools.template">
@@ -87,10 +87,10 @@
       <attribute name="dir" value="templates/launch/felix-gogo"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="size" value="25482" type="Long"/>
+      <attribute name="size" value="25577" type="Long"/>
       <attribute name="url" value="org.bndtools.templates.osgi/org.bndtools.templates.osgi-7.0.0.jar"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="osgi.content" value="011D47928F68250ECA80AD15CAE4A0B3A537AD9EC5033E7DFF540F0B38F9002D"/>
+      <attribute name="osgi.content" value="274A856A7D66B1B56D976F1619B5DE2253635305EC8D1BA271389F8AB5623495"/>
     </capability>
   </resource>
 </repository>
