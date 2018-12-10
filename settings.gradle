@@ -3,6 +3,7 @@ buildscript {
 		maven {
 			url uri(bnd_repourl)
 		}
+		mavenCentral()
 	}
 	dependencies { classpath "biz.aQute.bnd:biz.aQute.bnd.gradle:${bnd_version}" }
 	/* Add bnd gradle plugin to buildscript classpath of rootProject */
