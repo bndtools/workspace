@@ -1,8 +1,5 @@
 buildscript {
 	repositories {
-		maven {
-			url uri(bnd_repourl)
-		}
 		mavenCentral()
 	}
 	dependencies { classpath "biz.aQute.bnd:biz.aQute.bnd.gradle:${bnd_version}" }
