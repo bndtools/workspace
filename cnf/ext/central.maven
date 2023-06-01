@@ -1,0 +1,4 @@
+# List repository contents using GAV coordinates
+org.bndtools:org.bndtools.templates.osgi:${bndversion}
+org.bndtools:org.bndtools.templates.template:${bndversion}
+
