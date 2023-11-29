@@ -1,25 +1,19 @@
 # Configure Repositories
--plugin.1.R7.API: \
-	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
-		snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
-		releaseUrls=https://repo.maven.apache.org/maven2/; \
-		revision=org.osgi.enroute:osgi-api:7.0.0; \
-		readOnly=true; \
-		name="OSGi R7 API"
--plugin.2.Enterprise.API: \
-	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
-		snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
-		releaseUrls=https://repo.maven.apache.org/maven2/; \
-		revision=org.osgi.enroute:enterprise-api:7.0.0; \
-		readOnly=true; \
-		name="Enterprise Java APIs"
--plugin.3.R7.Impl: \
-	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
-		snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
-		releaseUrls=https://repo.maven.apache.org/maven2/; \
-		revision=org.osgi.enroute:impl-index:7.0.0; \
-		readOnly=true; \
-		name="OSGi R7 Reference Implementations"
+-plugin.1.build: \
+    aQute.bnd.repository.maven.provider.MavenBndRepository; \
+        snapshotUrl="https://oss.sonatype.org/content/repositories/snapshots/"; \
+        releaseUrl=https://repo.maven.apache.org/maven2/; \
+        index=${.}/build.mvn; \
+        readOnly=true; \
+        name="OSGI R8 - Build"
+
+-plugin.2.runtime: \
+    aQute.bnd.repository.maven.provider.MavenBndRepository; \
+        snapshotUrl="https://oss.sonatype.org/content/repositories/snapshots/"; \
+        releaseUrl="https://repo.maven.apache.org/maven2/"; \
+        index=${.}/runtime.mvn; \
+        readOnly=true; \
+        name="OSGI R8 - Runtime Distro"
 -plugin.4.Test: \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
 		snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
@@ -57,6 +51,33 @@
 		name = Release; \
 		pretty = true; \
 		local = ${build}/release
+		
+-runsystemcapabilities.dflt:    ${native_capability}
+
+debug-bundles: \
+    osgi.identity;filter:='(osgi.identity=osgi.enroute.webconsole.xray.provider)',\
+    osgi.implementation;filter:='(osgi.implementation=osgi.metatype)',\
+    osgi.implementation;filter:='(osgi.implementation=osgi.event)',\
+    osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+    osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)', \
+    osgi.identity;filter:='(osgi.identity=org.apache.felix.webconsole.plugins.ds)'
+
+# the driver-variable (see https://bnd.bndtools.org/macros/driver.html) 
+# helps to build to different folders e.g. depending on if Eclipse builds 
+# or e.g. gradle builds. 
+# that avoids conflicts between gradle and eclipse build
+# target-dir: dir specifies where build places the .jar and classes
+target-dir              generated${if;${driver;eclipse};;/${driver}}
+src                     src/main/java, src/main/resources
+testsrc                 src/test/java
+bin                     ${target-dir}/classes
+testbin                 ${target-dir}/test-classes		
+
+javac.source:           17
+javac.target:           17
+javac.compliance:       17
+javac.debug:            on
+
 
 -releaserepo: Release
 -baselinerepo: Release
